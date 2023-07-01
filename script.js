@@ -22,8 +22,8 @@ async function getUSer(username) {
             const { data } = await axios(APIURL + username + '/repos?sort=created')
 
             addReposToCard(data)
-        }catch(err) {
-            createErrorCard('problem fetching repos')
+        } catch(err) {
+            createErrorCard('Problem fetching repos')
         }
       }
      
@@ -53,7 +53,7 @@ async function getUSer(username) {
 
  }
 
- function creteErrorCard(msg) {
+ function createErrorCard(msg) {
     const cardHTML = `
     <div class="card">
         <h1>&{msg}</h1>
@@ -73,6 +73,8 @@ async function getUSer(username) {
             repoE1.href = repo.html_url 
             repoE1.target = '_blank'
             repoE1.innerText = repo.name
+
+            
             reposE1.appendChild(repoE1)
         })
  }
